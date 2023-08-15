@@ -5,13 +5,13 @@
   gather_facts: no
 
   tasks:
-    name: Install Nginx
-    apt:
-      name: nginx
-      state: present
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
 
-    name: Replace welcome to nginx
-    replace:
-      path: /var/www/html/index.nginx-debian.html
-      regexp: "Welcome to nginx!"
-      replace: "{{ ansible_date_time }}"
+    - name: Replace welcome to nginx
+      replace:
+        path: /var/www/html/index.nginx-debian.html
+        regexp: "Welcome to nginx!"
+        replace: "{{ ansible_date_time }}"
