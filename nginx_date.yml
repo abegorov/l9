@@ -1,5 +1,5 @@
 ---
-- name: Nginx + Date
+- name: Nginx and Date
   hosts: db
   become: true
   gather_facts: no
