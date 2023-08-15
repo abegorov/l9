@@ -1,6 +1,6 @@
 ---
 - name: Nginx and Date
-  hosts: db
+  hosts: web
   become: true
   gather_facts: yes
 
@@ -14,4 +14,4 @@
       replace:
         path: /var/www/html/index.nginx-debian.html
         regexp: "Welcome to nginx!"
-        replace: "{{ ansible_date_time }}"
+        replace: "{{ ansible_date_time.date }}"
